@@ -7,20 +7,53 @@
 
 	<h1>Lista de Produtos</h1>
 
-		<table>
+	<c:if test="${not empty msg }">
+		<div class="alert alert-success">${msg}</div>
+	</c:if>
+
+	<table>
+		<tr class="table">
+			<th>Id</th>
+			<th>Nome</th>
+			<th>Preço</th>
+			<th>Perecível</th>
+		</tr>
+		<c:forEach items="${produtos}" var="produto">
 			<tr class="table">
-				<th>Id</th>
-				<th>Nome</th>
-				<th>Preço</th>
-				<th>Perecível</th>
+				<td>${produto.codigo }</td>
+				<td>${produto.nome }</td>
+				<td>${produto.preco }</td>
+				<td>${produto.perecivel?"Sim":"Não" }</td>
+				<td><a
+					href="<c:url value="/produto/editar/${produto.codigo }"/>">Editar</a>
+				</td>
+				<td>
+					<button type="button" class="btn btn-primary" data-toggle="modal"
+						data-target="#exampleModal">Remover</button>
+				</td>
 			</tr>
-			<c:forEach items="${produtos}" var="produto">
-				<tr class="table">
-					<th>${produto.codigo }</th>
-					<th>${produto.nome }</th>
-					<th>${produto.preco }</th>
-					<th>${produto.perecivel }</th>
-				</tr>
-			</c:forEach>
-		</table>
+		</c:forEach>
+	</table>
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Remover produto</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">Deseja remover produto? Tem certeza?</div>
+				<div class="modal-footer">
+				<form action="<c:url value="/produto/remover"/>" method="post">
+					<input type="hidden" id="id" name="codigo">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+					<button type="submit" class="btn btn-primary">Salvar</button>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </tags:template>

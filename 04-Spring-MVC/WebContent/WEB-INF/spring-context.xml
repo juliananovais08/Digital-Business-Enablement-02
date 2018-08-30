@@ -27,7 +27,7 @@ http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
 
 	<!-- Liberar o acesso aos arquivos estáticos sem passar pelo controller -->
 	<mvc:default-servlet-handler />
-
+	<!-- Não precisa mais fazer o entity manager -->
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="persistenceUnitName" value="CLIENTE_ORACLE" />
@@ -48,6 +48,7 @@ http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
 	</bean>
 
 	<!-- Transações -->
+	<!-- Não precisa mais fazer commit e rollback-->
 	<bean id="transactionManager"
 		class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory"
