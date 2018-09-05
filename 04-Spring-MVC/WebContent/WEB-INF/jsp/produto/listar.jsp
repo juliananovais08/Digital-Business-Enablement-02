@@ -24,11 +24,11 @@
 				<td>${produto.nome }</td>
 				<td>${produto.preco }</td>
 				<td>${produto.perecivel?"Sim":"Não" }</td>
-				<td><a
+				<td><a class = "btn btn-primary"
 					href="<c:url value="/produto/editar/${produto.codigo }"/>">Editar</a>
 				</td>
 				<td>
-					<button type="button" class="btn btn-primary" data-toggle="modal"
+					<button onclick="codigoProduto.value = ${produto.codigo }" class="btn btn-secondary" data-toggle="modal"
 						data-target="#exampleModal">Remover</button>
 				</td>
 			</tr>
@@ -48,7 +48,7 @@
 				<div class="modal-body">Deseja remover produto? Tem certeza?</div>
 				<div class="modal-footer">
 				<form action="<c:url value="/produto/remover"/>" method="post">
-					<input type="hidden" id="id" name="codigo">
+					<input type="hidden" id="codigoProduto" name="codigo">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 					<button type="submit" class="btn btn-primary">Salvar</button>
 				</form>

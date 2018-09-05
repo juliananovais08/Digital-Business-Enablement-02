@@ -67,18 +67,23 @@ public class ProdutoController {
 		return new ModelAndView("redirect:/produto/listar"); 
 	}
 	
-	@PostMapping("/remover/{id}")
+	//Não tem ID  no @PostMapping, pq não vai pela URL, vai pelo corpo da requisição
+	@PostMapping("remover")
 	@Transactional
-	public ModelAndView removerProduto(Produto produto, @PathVariable("id") int id, RedirectAttributes r) {
+	public String removerProduto(int codigo, RedirectAttributes r) {
 		try {
-			dao.remover(id);
+			dao.remover(codigo);
+			r.addFlashAttribute("msg", "Produto removido!");
 		} catch (KeyNotFoundException e) {
 			e.printStackTrace();
-		}
-		r.addFlashAttribute("msg", "Produto removido!");
-		return new ModelAndView("redirect:/produto/listar");
+		}		
+		return "redirect:/produto/listar";
 	}
 	
+	@GetMapping("buscar")
+	public ModelAndView buscarPorNome(String nomeProduto) {
+		return new ModelAndView("produto/listar").addObject("produtos",dao.buscarPorNome(nomeProduto));
+	}
 	
 
 }
