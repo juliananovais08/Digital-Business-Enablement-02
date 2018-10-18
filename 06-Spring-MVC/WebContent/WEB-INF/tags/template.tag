@@ -24,15 +24,15 @@
           Convidado
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<c:url value="/convidado/cadastrar"/>">Cadastrar</a>
-          <a class="dropdown-item" href="<c:url value="/convidado/listar"/>">Listar</a>
+          <a class="dropdown-item" href="<c:url value="/marca/cadastrar"/>">Cadastrar</a>
+          <a class="dropdown-item" href="<c:url value="/marca/listar"/>">Listar</a>
         </div>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-    <form action="<c:url value="/convidado/buscar"/>" method="get" class="form-inline my-2 my-lg-0">
+    <form action="<c:url value="/marca/buscar"/>" method="get" class="form-inline my-2 my-lg-0">
       <input name="nome" class="form-control mr-sm-2" type="search" placeholder="Convidado" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
     </form>
