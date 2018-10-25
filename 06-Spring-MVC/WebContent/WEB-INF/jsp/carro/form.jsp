@@ -27,7 +27,14 @@
 		<div class="form-group">
 			<form:label path="marca">Marca</form:label>
 			<form:select path="marca.codigo" cssClass="form-control">
-				<form:options item="${marcas }" itemLabel="nome" itemValue="codigo"/> <!-- marcas - olhar controller -->
+			<form:option value="0">Selecione</form:option>
+				<form:options item="${marcas }" itemLabel="nome" itemValue="codigo"/>   <!-- marcas - olhar controller objeto que representa lista de marcas -->
+			</form:select>
+		</div>
+		<div class="form-group">
+			<form:label path="combustivel">Combustível</form:label>
+			<form:select path="combustivel" cssClass="form-control">
+			<form:options value="${combustiveis }" itemLabel="Label"/>
 			</form:select>
 		</div>
 		<div class="form-group">

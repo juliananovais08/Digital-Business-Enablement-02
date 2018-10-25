@@ -21,11 +21,12 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Convidado
+          Carro
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<c:url value="/marca/cadastrar"/>">Cadastrar</a>
-          <a class="dropdown-item" href="<c:url value="/marca/listar"/>">Listar</a>
+          <a class="dropdown-item" href="<c:url value="/marca/cadastrar"/>">Cadastrar Marca</a>
+          <a class="dropdown-item" href="<c:url value="/carro/cadastrar"/>">Cadastrar Carro</a>
+          <a class="dropdown-item" href="<c:url value="/carro/listar"/>">Listar</a>
         </div>
       </li>
       <li class="nav-item">

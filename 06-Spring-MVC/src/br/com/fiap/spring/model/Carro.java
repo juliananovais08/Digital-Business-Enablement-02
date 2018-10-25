@@ -34,6 +34,8 @@ public class Carro {
 	@Past
 	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Calendar dataFabricacao;
+	
+	private Combustivel combustivel;
 
 	public int getCodigo() {
 		return codigo;
@@ -73,6 +75,14 @@ public class Carro {
 
 	public void setMarca(Marca marca) {
 		this.marca = marca;
+	}
+
+	public Combustivel getCombustivel() {
+		return combustivel;
+	}
+
+	public void setCombustivel(Combustivel combustivel) {
+		this.combustivel = combustivel;
 	}
 
 

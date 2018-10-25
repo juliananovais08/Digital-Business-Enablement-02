@@ -17,17 +17,16 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.fiap.jpa.dao.CarroDAO;
 import br.com.fiap.jpa.dao.MarcaDAO;
 import br.com.fiap.spring.model.Carro;
+import br.com.fiap.spring.model.Combustivel;
 import br.com.fiap.spring.model.Marca;
 
 @Controller
 @RequestMapping("carro")
 public class CarroController {
-	
 
 	
 	@Autowired
-	private CarroDAO dao;
-	
+	private CarroDAO dao;	
 	
 	@Autowired
 	private MarcaDAO marcaDao;    //pra lista de marca precida do DAO da Marca
@@ -40,7 +39,7 @@ public class CarroController {
 	@GetMapping("cadastrar")
 	public ModelAndView cadastrar(Carro carro) {
 		List<Marca> lista = marcaDao.listar();
-		return new ModelAndView("carro/form").addObject("marcas",lista); //marcas porque é como ta no formulário
+		return new ModelAndView("carro/form").addObject("marcas",lista).addObject("combustiveis", Combustivel.values()); //marcas - coloca assim no formulario
 	}
 	
 	@Transactional

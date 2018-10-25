@@ -31,7 +31,7 @@ public class MarcaController {
 	public String processarCadastro(@Valid Marca marca, BindingResult b, RedirectAttributes r) {
 		
 		if(b.hasErrors()) {
-			return 	"marca/form";
+			return "marca/form";
 		}else {
 			dao.inserir(marca);
 			r.addFlashAttribute("msg", "Marca registrada!"); //depois de post sempre redirect

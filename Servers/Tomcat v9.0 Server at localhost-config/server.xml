@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="06-Spring-MVC" path="/06-Spring-MVC" reloadable="true" source="org.eclipse.jst.jee.server:06-Spring-MVC"/><Context docBase="Nac-Correcao" path="/PS" reloadable="true" source="org.eclipse.jst.jee.server:Nac-Correcao"/><Context docBase="03-Spring-MVC" path="/03-Spring-MVC" reloadable="true" source="org.eclipse.jst.jee.server:03-Spring-MVC"/><Context docBase="02-Spring-MVC" path="/02-Spring-MVC" reloadable="true" source="org.eclipse.jst.jee.server:02-Spring-MVC"/><Context docBase="01-Spring-MVC" path="/01-Spring-MVC" reloadable="true" source="org.eclipse.jst.jee.server:01-Spring-MVC"/><Context docBase="05-Spring-MVC-JPA" path="/05-Spring-MVC-JPA" reloadable="true" source="org.eclipse.jst.jee.server:05-Spring-MVC-JPA"/><Context docBase="04-Spring-MVC" path="/04-Spring-MVC" reloadable="true" source="org.eclipse.jst.jee.server:04-Spring-MVC"/></Host>
+      <Context docBase="06-Spring-MVC" path="/06-Spring-MVC" reloadable="true" source="org.eclipse.jst.jee.server:06-Spring-MVC"/></Host>
     </Engine>
   </Service>
 </Server>

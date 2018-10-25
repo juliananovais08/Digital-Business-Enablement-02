@@ -15,6 +15,7 @@
 			<th>Data Fabricação</th>
 			<th>Completo</th>
 			<th>Marca</th>
+			<th>Combustível</th>
 		</tr>
 		<c:forEach items="${carros }" var = "c">
 			<tr>
@@ -22,8 +23,9 @@
 				<td>
 					<fmt:formatDate value="${c.dataFabricacao.time }" pattern="dd/MM/yyyy"/>
 				</td>
-				<td>${c.completo }</td>
+				<td>${c.completo?"Sim":"Não"}</td>
 				<td>${c.marca.nome }</td>
+				<td>${c.combustivel.label }</td>
 			</tr>
 		</c:forEach>
 	</table>
