@@ -49,7 +49,7 @@ public class CarroController {
 			return cadastrar(carro);
 		}else {
 			dao.inserir(carro);
-			r.addFlashAttribute("msg", "Carro registrado!");
+			r.addFlashAttribute("msg", "Carro registrado com sucesso!");
 			return new ModelAndView("redirect:/carro/cadastrar"); //pra fazer a lista de marca tem que ser por model and view
 		}
 	

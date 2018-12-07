@@ -34,7 +34,7 @@ public class MarcaController {
 			return "marca/form";
 		}else {
 			dao.inserir(marca);
-			r.addFlashAttribute("msg", "Marca registrada!"); //depois de post sempre redirect
+			r.addFlashAttribute("msg", "Marca registrada com sucesso!"); //depois de post sempre redirect
 			return "redirect:/marca/cadastrar";  //redirect URL
 		}
 		
